@@ -1,227 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matt Flynn | Developer & Solutions Architect</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Welcome to Matt Flynn's Homepage</title>
     <style>
-        :root {
-            --primary: #0f172a;
-            --secondary: #64748b;
-            --accent: #06b6d4;
-            --background: #ffffff;
-            --text: #1e293b;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: 'Space Grotesk', sans-serif;
-            background-color: var(--background);
-            color: var(--text);
-            line-height: 1.6;
+            background: #000000;
+            color: #00FF00;
+            font-family: "Courier New", Courier, monospace;
+            margin: 0;
+            padding: 20px;
         }
-
         .container {
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 0 2rem;
+            border: 2px solid #00FF00;
+            padding: 20px;
         }
-
-        nav {
-            padding: 2rem 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .blink {
+            animation: blink 1s steps(1) infinite;
         }
-
-        .logo {
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: var(--primary);
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+        table {
+            width: 100%;
+            border: 1px solid #00FF00;
+        }
+        td {
+            padding: 10px;
+            border: 1px solid #00FF00;
+        }
+        a {
+            color: #00FF00;
             text-decoration: none;
         }
-
-        .hero {
-            min-height: calc(100vh - 100px);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            padding: 4rem 0;
+        a:hover {
+            color: #FFFFFF;
         }
-
-        .hero-content {
-            animation: slideUp 0.8s ease;
+        .marquee {
+            background: #000000;
+            padding: 10px;
+            margin: 10px 0;
         }
-
-        .hero-image {
-            position: relative;
+        .counter {
+            font-family: "Digital", "Courier New", monospace;
+            background: #000000;
+            color: #00FF00;
+            padding: 5px;
+            border: 1px solid #00FF00;
+            display: inline-block;
         }
-
-        .hero-image::before {
-            content: '';
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, rgba(6, 182, 212, 0) 70%);
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: -1;
-        }
-
-        h1 {
-            font-size: 4rem;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-        }
-
-        .title {
-            font-size: 1.25rem;
-            color: var(--secondary);
-            margin-bottom: 2rem;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--accent);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: transform 0.2s ease;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-        }
-
-        .skills {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .skill {
-            padding: 2rem;
-            border-radius: 12px;
-            background: rgba(6, 182, 212, 0.05);
-            border: 1px solid rgba(6, 182, 212, 0.1);
-            transition: transform 0.2s ease;
-        }
-
-        .skill:hover {
-            transform: translateY(-5px);
-        }
-
-        .skill h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1.5rem;
-            font-size: 1.5rem;
-        }
-
-        .social-links a {
-            color: var(--secondary);
-            transition: color 0.2s ease;
-        }
-
-        .social-links a:hover {
-            color: var(--accent);
-        }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-image {
-                display: none;
-            }
-
-            .skills {
-                grid-template-columns: 1fr;
-            }
-
-            h1 {
-                font-size: 3rem;
-            }
+        .ascii-art {
+            white-space: pre;
+            font-family: monospace;
+            font-size: 12px;
+            line-height: 12px;
+            margin: 20px 0;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <nav>
-            <a href="#" class="logo">MF</a>
-            <div class="social-links">
-                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-linkedin"></i>
-                </a>
+        <center>
+            <h1 class="blink">* MATT FLYNN'S CYBERSPACE *</h1>
+            <div class="ascii-art">
+   /\\\\\\\\\\\\  /\\\\\\\\\\   /\\\\\\\\\\\   /\\\\\\\\\\\\
+  /\\\////////  /\\\////\\\\ /\\\///////\\\ /\\\///////\\\
+  /\\\          /\\\    \\\\ \///      \//  \///     \//\\\
+  \/\\\    \\\\ \/\\\    \\\            /\\\      /\\\/
+   \/\\\\\\\\\  \/\\\\\\\\\        /\\\ \/\\\ /\\\/
+    \////////    \////////         \///  \/// \///
             </div>
-        </nav>
+            <marquee class="marquee" scrollamount="5">WELCOME TO MY PERSONAL HOMEPAGE - BEST VIEWED WITH NETSCAPE NAVIGATOR</marquee>
+        </center>
 
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Matt Flynn</h1>
-                <p class="title">Software Developer & Solutions Architect</p>
-                <a href="mailto:contact@mattflynn.dev" class="btn">
-                    <i class="fas fa-envelope"></i>
-                    Get in touch
-                </a>
+        <table>
+            <tr>
+                <td width="70%">
+                    <h2>&gt; ABOUT ME:</h2>
+                    <p>Greetings, cybernaut! I am a SOFTWARE DEVELOPER specializing in:</p>
+                    <ul>
+                        <li>FULL-STACK DEVELOPMENT</li>
+                        <li>CLOUD ARCHITECTURE</li>
+                        <li>SYSTEM DESIGN</li>
+                    </ul>
+                    <p class="blink">&gt; CURRENTLY UNDER CONSTRUCTION &lt;</p>
+                </td>
+                <td width="30%" align="center">
+                    <img src="/api/placeholder/150/150" alt="Under Construction" /><br>
+                    <div class="counter">
+                        VISITORS: 000042
+                    </div>
+                </td>
+            </tr>
+        </table>
 
-                <div class="skills">
-                    <div class="skill">
-                        <h3>Full-Stack Development</h3>
-                        <p>Building seamless experiences from backend to frontend</p>
-                    </div>
-                    <div class="skill">
-                        <h3>Cloud Architecture</h3>
-                        <p>Designing scalable and resilient cloud solutions</p>
-                    </div>
-                    <div class="skill">
-                        <h3>System Design</h3>
-                        <p>Creating robust and maintainable architectures</p>
-                    </div>
-                </div>
+        <center>
+            <h2>&gt; CONTACT INFO:</h2>
+            <p>
+                <blink>***</blink>
+                <a href="mailto:contact@mattflynn.dev">E-MAIL ME</a>
+                <blink>***</blink>
+            </p>
+            <p>
+                <a href="guestbook.html">SIGN MY GUESTBOOK</a> |
+                <a href="links.html">COOL LINKS</a> |
+                <a href="https://github.com/yourusername">MY GITHUB</a>
+            </p>
+            <div class="ascii-art">
+    ___________________
+   |   MADE WITH VIM   |
+   |   AND UNIX IN     |
+   |     2025 A.D.     |
+    -------------------
             </div>
+        </center>
 
-            <div class="hero-image">
-                <!-- Gradient background effect -->
-            </div>
-        </section>
+        <p align="center">
+            <img src="/api/placeholder/88/31" alt="Netscape Now!" />
+            <img src="/api/placeholder/88/31" alt="Best viewed at 800x600" />
+        </p>
     </div>
 </body>
 </html>
